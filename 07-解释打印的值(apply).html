@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function test(a){
+            var code = "600";
+            setTimeout(()=>{
+                this.code = a;
+            });
+        }
+        var a = 700;
+        b = {code:"900"};
+        test.apply(b,[a]);
+        alert(b.code+a);
+    </script>
+</body>
+</html>

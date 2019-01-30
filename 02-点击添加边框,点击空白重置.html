@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body> 
+    <!-- 点击容器内的图标，图标边框变成border 1px solid red，点击空白处重置。 -->
+    <div id="box">
+        <img class="icon" src="./img/企鹅.png" alt="">
+    </div>
+    <script>
+        const box = document.getElementById('box');
+        function isIcon(target) {
+            return target.className.includes('icon');
+        }
+
+        box.onclick = function (e) {
+            console.log("1");
+            e.stopPropagation();
+            const target = e.target;
+            if (isIcon(target)) {
+                target.style.border = '1px solid red';
+            }
+        }
+        const doc = document;
+        doc.onclick = function (e) {    
+            console.log(2);
+            const children = box.children;
+            console.log(children);
+            for (let i = 0; i < children.length; i++) {
+                if (isIcon(children[i])) {
+                    children[i].style.border = 'none';
+                }
+            }
+        }
+    </script>
+</body>
+</html>
