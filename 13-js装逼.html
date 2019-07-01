@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            transition: all 0.5s;
+        }
+    </style>
+</head>
+<body  onload="setInterval(()=>document.body.innerHTML=new Date().toLocaleString())">
+    <script>
+        // 过去7天
+        [...Array(7).keys()].map(days => new Date(Date.now() - 8640000 * days));
+        //未来7天
+        [...Array(7).keys()].map(days => new Date(Date.now() + 8640000 * days));
+        //days为箭头函数传入的值,就是array的key值,分别是0,1,2,3,4,5,6
+
+
+
+        //生成随机ID
+        var a = Math.random().toString(36).substring(2);
+        console.log(a);
+        //toString(36)代表36进制，可使用2-36之前的整理，若省略不写，则默认为十进制
+        //随机一串数字,转为36进制,substring是取消小数点
+
+
+        //获取URL的查询参数
+        var q = {};
+        location.search.replace(/([^?&=]+)=([^&]+)/g,(_,k,v)=>q[k]=v);
+        console.log(q);
+
+
+        //随机更改数组元素顺序
+        var random = (arr) => arr.slice().sort(() => Math.random() - 0.5)
+        var newArr = random([1,2,3,4,5])
+        console.log(newArr)
+
+
+
+        //生成随机色
+        setInterval(()=>{
+            document.body.style.background = '#' + Math.floor(Math.random() * 0xffffff).toString(16).padEnd(6, '0')
+        },1000);
+
+
+        //一个面试题---(获取运行结果)
+        for(i=0;++i<31;console.log(i%5?f||i:f+'Buzz'))f=i%3?'':'Fizz'
+
+
+        //数组去重
+        var arr = [1,6,5,5,4,6,6,54,8,7,4,5];
+        console.log([...new Set(arr)]);
+
+
+        //快捷创建特定大小的数组
+        console.log("特定数组",[...Array(6).keys()])
+
+        // 用字符串返回一个键盘图形
+        var c = (_=>[..."`1234567890-=~~QWERTYUIOP[]\\~ASDFGHJKL;'~~ZXCVBNM,./~"].map(x=>(o+=`/${b='_'.repeat(w=x<y?2:' 667699'[x=["BS","TAB","CAPS","ENTER"][p++]||'SHIFT',p])}\\|`,m+=y+(x+'    ').slice(0,w)+y+y,n+=y+b+y+y,l+=' __'+b)[73]&&(k.push(l,m,n,o),l='',m=n=o=y),m=n=o=y='|',p=l=k=[])&&k.join`
+        `)();
+        console.log(c);
+
+    </script>
+</body>
+</html>

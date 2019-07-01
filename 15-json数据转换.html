@@ -8,16 +8,10 @@
 </head>
 <body>
     <script>
-        function test(a){
-            var code = "600";
-            setTimeout(()=>{
-                this.code = a;
-            });
-        }
-        var a = 700;
-        b = {code:"900"};
-        test.apply(b,[a]);
-        alert(b.code+a);   //900700
+        let req = {};
+        req.body =  { row: '{"majorId":2,"classId":"7","role":401,"status":"正常"}' };
+        console.log(JSON.parse(req.body.row));
+        console.log(JSON.stringify(req.body.row));
     </script>
 </body>
 </html>
