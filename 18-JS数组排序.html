@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 顺序排序
+        // 1. 按字符编码排序
+        var array = [ 30,50,20,79,40,105,15 ];
+        array.sort();
+
+        //2. 将数组元素倒序排列
+        var array = [ 30,50,20,79,40,105,15 ];
+        array.reverse();
+
+        //3.从小到大排序
+        var array = [ 30,50,20,79,40,105,15 ];
+        arr.sort(function(a,b){
+            return a-b;
+        })
+
+
+        //随机打乱排序
+        //1.低效版
+       var array = [ 30,50,20,79,40,105,15 ];
+       array.sort(function(){
+           return Math.rendom()>0.5?-1:1;
+       })
+
+        //高效版
+        //1.洗牌算法
+        var array = [ 30,50,20,79,40,105,15 ];
+        if(!Array.prototype.derangedArray){
+            Array.prototype.derangedArray = function(){
+                for(var j,x,i = this.length;i;j = parseInt(Math.random()*i),x = this[--i],this[i]=this[j],this[j] = x);
+            }
+        }
+
+        //2.简单明了,复杂度为0
+        function shuffle(arr){
+            var len = arr.length;
+            for(var i = 0;i<len-1;i++){
+                var index = parseInt(Math.random()*(len-i));
+                var temp = arr[index];
+                arr[index] = arr[len-i-1];
+                arr[len-i-1] = temp;
+            }
+            return arr;
+        }
+        var array = [ 30,50,20,79,40,105,15 ];
+        shuffle(arr);
+    </script>
+</body>
+</html>

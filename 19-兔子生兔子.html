@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //1.定义三个变量，然后两个初始化值。第三个作为存储使用
+    var temp;
+    var num1 = 1;
+    var num2 = 1;
+    //2.先把之前的第二个变量存储在中间变量，然后把之后的第二个变量赋值为之前两个变量的和
+    for(var i=1;i<=10;i++){
+        temp = num2;
+        num2 = num1 + num2;
+        //3.把存储的中间变量赋值给之后的第一个变量。
+        num1 = temp;
+        //4.执行10次。（因为前两项不需要计算，所以只需要执行10次）
+    }
+ 
+   console.log(num2);
+
+
+   
+    </script>
+</body>
+</html>
